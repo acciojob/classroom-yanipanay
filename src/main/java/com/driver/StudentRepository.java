@@ -1,6 +1,6 @@
-package com.driver.Repository;
+package com.driver;
 
-import com.driver.Model.Student;
+import com.driver.Student;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
