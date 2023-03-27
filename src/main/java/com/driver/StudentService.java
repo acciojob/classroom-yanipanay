@@ -62,7 +62,11 @@ public class StudentService {
     }
 
     public void deleteAllTeachers(){
-        teacherRepository.deleteAll();
+        List<String> teachers = teacherRepository.getAllTeachers();
+
+        for(String teacherName : teachers){
+            deleteTeacher(teacherName);
+        }
     }
 
     public void pairStudentTeacher(String studentName,String teacherName){

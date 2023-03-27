@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
+
 
 @Repository
 public class TeacherRepository {
@@ -53,5 +55,10 @@ public class TeacherRepository {
         SList.add(student);
 
         TeacherPairs.put(teacher,SList);
+    }
+
+    public List<String> getAllTeachers(){
+        List<String> allteachers = TeacherDB.keySet().stream().collect(Collectors.toList());
+        return  allteachers;
     }
 }
