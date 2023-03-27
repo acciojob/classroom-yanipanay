@@ -30,4 +30,8 @@ public class StudentRepository {
         }
         return st;
     }
+
+    public void removeStudent(String studentName){
+        StudentDB.remove(studentName);
+    }
 }

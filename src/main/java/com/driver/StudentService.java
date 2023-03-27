@@ -54,6 +54,10 @@ public class StudentService {
 
     public void deleteTeacher(String teacherName){
         Teacher teacher = teacherRepository.getTeacher(teacherName);
+        List<String> students = getListByTeacher(teacherName);
+        for(String nam: students){
+            studentRepository.removeStudent(nam);
+        }
         teacherRepository.deleteTeacher(teacher);
     }
 
